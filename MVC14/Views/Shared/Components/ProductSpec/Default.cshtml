@@ -1,0 +1,354 @@
+﻿@model MVC14.ViewModels.ProductVM
+
+
+<div>
+    @if (Model.Laptop != null)
+    {
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.LaptopType)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.LaptopType)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.Os)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.Os)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.ScreenResolution)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.ScreenResolution)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.Weight)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.Weight)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.Length)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.Length)
+            </dd>
+        </dl>
+        <h4>CPU: @Model.Laptop.CpuName</h4>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.Cores)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.Cores)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.Logicals)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.Logicals)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.Tdp)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.Tdp)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.Socket)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.Socket)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.CpuSpeed)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.CpuSpeed)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.Turbo)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.Turbo)
+            </dd>
+        </dl>
+        <h4>GPU: @Model.Laptop.GpuName</h4>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.MemorySize)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.MemorySize)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.MemoryType)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.MemoryType)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.UnifiedShader)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.UnifiedShader)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.Tmu)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.Tmu)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.Rop)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.Rop)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.Clock)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.Clock)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.Bus)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.Bus)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.Igpu)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.Igpu)
+            </dd>
+        </dl>
+        <h4>RAM: @Model.Laptop.RamName</h4>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.RamCapacity)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.RamCapacity)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.RamSpeed)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.RamSpeed)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.Gen)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.Gen)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.Kit)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.Kit)
+            </dd>
+        </dl>
+        <h4>Bộ nhớ: @Model.Laptop.StorageName</h4>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.StorageType)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.StorageType)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.StorageCapacity)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.StorageCapacity)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.InterfaceType)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.InterfaceType)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.WriteSpeed)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.WriteSpeed)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Laptop.ReadSpeed)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Laptop.ReadSpeed)
+            </dd>
+        </dl>
+    }
+    
+    @if (Model.Cpu != null)
+    {
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Cpu.Cores)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Cpu.Cores)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Cpu.Logicals)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Cpu.Logicals)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Cpu.Tdp)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Cpu.Tdp)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Cpu.Socket)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Cpu.Socket)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Cpu.CpuSpeed)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Cpu.CpuSpeed)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Cpu.Turbo)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Cpu.Turbo)
+            </dd>
+        </dl>
+    }
+    
+    @if (Model.Gpu != null)
+    {
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Gpu.MemorySize)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Gpu.MemorySize)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Gpu.MemoryType)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Gpu.MemoryType)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Gpu.UnifiedShader)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Gpu.UnifiedShader)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Gpu.Tmu)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Gpu.Tmu)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Gpu.Rop)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Gpu.Rop)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Gpu.Clock)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Gpu.Clock)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Gpu.Bus)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Gpu.Bus)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Gpu.Igpu)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Gpu.Igpu)
+            </dd>
+        </dl>
+    }
+    
+    @if (Model.Ram != null)
+    {
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Ram.RamCapacity)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Ram.RamCapacity)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Ram.RamSpeed)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Ram.RamSpeed)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Ram.Gen)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Ram.Gen)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Ram.Kit)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Ram.Kit)
+            </dd>
+        </dl>
+    }
+    
+    @if (Model.Storage != null)
+    {
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Storage.StorageType)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Storage.StorageType)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Storage.StorageCapacity)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Storage.StorageCapacity)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Storage.InterfaceType)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Storage.InterfaceType)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Storage.WriteSpeed)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Storage.WriteSpeed)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Storage.ReadSpeed)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Storage.ReadSpeed)
+            </dd>
+        </dl>
+    }
+
+    
+</div>
