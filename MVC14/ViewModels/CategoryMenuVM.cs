@@ -1,9 +1,16 @@
-﻿namespace MVC14.ViewModels
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace MVC14.ViewModels
 {
     public class CategoryMenuVM
     {
+        [Display(Name = "ID Danh Mục")]
         public int CategoryId { get; set; }
+
+        [Display(Name = "Tên Danh Mục")]
         public string Name { get; set; } = null!;
+
+        [Display(Name = "Số Lượng Sản Phẩm")]
         public int Count { get; set; } = 0;
     }
 }

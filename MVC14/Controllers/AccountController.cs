@@ -157,12 +157,66 @@ namespace MVC14.Controllers
 
             customer.User.Email = dto.Email;
             customer.User.Username = dto.Username;
-            if(dto.ChangePassword != null)
-            {
-                customer.User.PasswordHash = dto.ChangePassword.NewPassword;
-            }
             _mapper.Map(dto.Profile, customer.Pi);
             await _context.SaveChangesAsync();
+            return RedirectToAction("Profile");
+        }
+
+        public IActionResult ChangePassword()
+        {
+            var userId = HttpContext.Session.GetInt32(SessionConstants.userId);
+            if (userId == null)
+            {
+                return RedirectToAction("Login");
+            }
+
+            return View(new ChangePasswordDTO());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ChangePassword(ChangePasswordDTO dto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(dto);
+            }
+
+            var userId = HttpContext.Session.GetInt32(SessionConstants.userId);
+            if (userId == null)
+            {
+                return RedirectToAction("Login");
+            }
+
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserId == userId);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            if (user.PasswordHash != dto.OldPassword)
+            {
+                ModelState.AddModelError(nameof(dto.OldPassword), "Mật khẩu cũ không đúng");
+                return View(dto);
+            }
+
+            if (dto.NewPassword != dto.ConfirmNewPassword)
+            {
+                ModelState.AddModelError(nameof(dto.ConfirmNewPassword), "Xác nhận mật khẩu không khớp");
+                return View(dto);
+            }
+
+            if (dto.OldPassword == dto.NewPassword)
+            {
+                ModelState.AddModelError(nameof(dto.NewPassword), "Mật khẩu mới không được trùng mật khẩu cũ");
+                return View(dto);
+            }
+
+            user.PasswordHash = dto.NewPassword;
+
+            await _context.SaveChangesAsync();
+
+            TempData["Success"] = "Đổi mật khẩu thành công";
             return RedirectToAction("Profile");
         }
 
