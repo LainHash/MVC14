@@ -59,13 +59,16 @@
                     <form asp-action="Add" asp-controller="Cart" method="post">
                         <input type="hidden" name="productSkuId" value="@item.ProductSkuId" />
                         <input type="hidden" name="quantity" value="1" />
-                        <button type="submit">Add to Cart</button>
+                        <button type="submit">Thêm vào giỏ hàng</button>
                     </form>
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+                </td>
+                <td>
+                    <a asp-controller="Invoice" asp-action="BuyOne" asp-route-id="@item.ProductId">Mua</a>
                 </td>
             </tr>
         }

@@ -28,6 +28,8 @@ public partial class Dbmvc05Context : DbContext
 
     public virtual DbSet<Department> Departments { get; set; }
 
+    public virtual DbSet<Discount> Discounts { get; set; }
+
     public virtual DbSet<Employee> Employees { get; set; }
 
     public virtual DbSet<Gpu> Gpus { get; set; }
@@ -71,6 +73,8 @@ public partial class Dbmvc05Context : DbContext
     public virtual DbSet<VwGpuSpec> VwGpuSpecs { get; set; }
 
     public virtual DbSet<VwInvoice> VwInvoices { get; set; }
+
+    public virtual DbSet<VwInvoiceDetail> VwInvoiceDetails { get; set; }
 
     public virtual DbSet<VwLaptopSpec> VwLaptopSpecs { get; set; }
 
@@ -190,6 +194,17 @@ public partial class Dbmvc05Context : DbContext
                 .HasConstraintName("FK__Departmen__Paren__45BE5BA9");
         });
 
+        modelBuilder.Entity<Discount>(entity =>
+        {
+            entity.HasIndex(e => e.DiscountCode, "IX_Discounts").IsUnique();
+
+            entity.Property(e => e.Amount).HasDefaultValue(1);
+            entity.Property(e => e.DiscountCode)
+                .HasMaxLength(20)
+                .IsFixedLength();
+            entity.Property(e => e.ExpiredDate).HasDefaultValueSql("(sysdatetime())");
+        });
+
         modelBuilder.Entity<Employee>(entity =>
         {
             entity.HasKey(e => e.EmployeeId).HasName("PK__Employee__7AD04F1102C23FF0");
@@ -287,7 +302,6 @@ public partial class Dbmvc05Context : DbContext
 
             entity.HasOne(d => d.Employee).WithMany(p => p.Invoices)
                 .HasForeignKey(d => d.EmployeeId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Invoices__Employ__2D12A970");
         });
 
@@ -634,6 +648,23 @@ public partial class Dbmvc05Context : DbContext
             entity
                 .HasNoKey()
                 .ToView("vw_Invoices");
+
+            entity.Property(e => e.CustomerCode)
+                .HasMaxLength(20)
+                .IsFixedLength();
+            entity.Property(e => e.EmployeeCode)
+                .HasMaxLength(20)
+                .IsFixedLength();
+            entity.Property(e => e.Status)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<VwInvoiceDetail>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToView("vw_InvoiceDetails");
 
             entity.Property(e => e.CategoryName)
                 .HasMaxLength(255)

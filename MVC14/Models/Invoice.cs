@@ -17,8 +17,7 @@ public partial class Invoice
     public int CustomerId { get; set; }
 
     [Display(Name = "ID Nhân Viên")]
-    [Required(ErrorMessage = "Nhân viên là bắt buộc")]
-    public int EmployeeId { get; set; }
+    public int? EmployeeId { get; set; }
 
     [Display(Name = "Ngày Đặt Hàng")]
     [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
@@ -83,7 +82,7 @@ public partial class Invoice
 
     public virtual Customer Customer { get; set; } = null!;
 
-    public virtual Employee Employee { get; set; } = null!;
+    public virtual Employee? Employee { get; set; } = null!;
 
     public virtual ICollection<InvoiceDetail> InvoiceDetails { get; set; } = new List<InvoiceDetail>();
 }
