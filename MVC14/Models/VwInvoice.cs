@@ -10,10 +10,10 @@ public partial class VwInvoice
     [Display(Name = "Mã Khách Hàng")]
     public string? CustomerCode { get; set; }
 
-    public int EmployeeId { get; set; }
+    public int? EmployeeId { get; set; }
     
     [Display(Name = "Mã Nhân Viên")]
-    public string EmployeeCode { get; set; } = null!;
+    public string? EmployeeCode { get; set; } = null!;
 
     public int InvoiceId { get; set; }
     [Display(Name = "Ngày đặt hàng")]
@@ -43,6 +43,4 @@ public partial class VwInvoice
     public int? TotalAmount { get; set; }
     [Display(Name = "Ghi chú")]
     public string? Note { get; set; }
-    [Display(Name = "Số lượng sản phẩm")]
-    public int? Quantity { get; set; }
 }

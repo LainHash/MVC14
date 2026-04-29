@@ -2,6 +2,7 @@
 {
     public static class ProductConstants
     {
+        public const int ProductsPerPage = 15; 
         public static readonly Dictionary<int, string> sortDict = new Dictionary<int, string>()
         {
                 { 0, "Mới nhất" },

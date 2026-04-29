@@ -19,5 +19,6 @@ namespace MVC14.ViewModels
 
         [Display(Name = "Chi Tiết Bộ Nhớ")]
         public VwStorageSpec? Storage { get; set; }
+
     }
 }

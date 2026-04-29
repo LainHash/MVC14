@@ -2,7 +2,7 @@
 @model IEnumerable<MVC14.ViewModels.CategoryMenuVM>
 
 <div class="dropdown">
-    <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">@RouteDisplayName.ProductsPage</a>
+    <a class="nav-item nav-link" asp-area="" asp-controller="Product" asp-action="Index">@RouteDisplayName.ProductsPage</a>
 
     <ul class="dropdown-menu">
         @foreach (var item in Model)

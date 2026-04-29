@@ -52,45 +52,4 @@
 
 @await Html.PartialAsync("_ProductGrid", Model)
 
-<nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-        @if (activePage > 1)
-        {
-            <li class="page-item">
-                <a class="page-link"
-                       aria-label="Previous"
-                       asp-route-page="@(activePage > 1 ? activePage - 1 : 1)">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-        }
-        @for (; indexPage <= totalPages; indexPage++)
-        {
-            if (indexPage == activePage)
-            {
-                <li class="page-item active" aria-current="page">
-                    <span class="page-link">@indexPage</span>
-                </li>
-            }
-            else
-            {
-                <li class="page-item">
-                    <a class="page-link"
-                           asp-route-page="@indexPage">
-                        @indexPage
-                    </a>
-                </li>
-            }
-        }
-        @if (activePage < totalPages)
-        {
-            <li class="page-item">
-                <a class="page-link"
-                       aria-label="Next"
-                       asp-route-page="@(activePage < totalPages ? activePage + 1 : totalPages)">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-        }
-    </ul>
-</nav>
+@await Component.InvokeAsync("Pagination", new { active = activePage, index = indexPage, total = totalPages })

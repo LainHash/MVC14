@@ -328,7 +328,7 @@ namespace MVC14.Controllers
                 Description = dto.Description,
                 Image = new Image()
                 {
-                    ImageUrl = dto.ImageUrl ?? "~img/NotFoundImage.png",
+                    ImageUrl = dto.ImageUrl ?? null,
                 },
                 ProductSku = new ProductSku()
                 {

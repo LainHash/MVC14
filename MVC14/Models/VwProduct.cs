@@ -50,4 +50,6 @@ public partial class VwProduct
 
     [Display(Name = "Đã Xóa")]
     public bool IsDeleted { get; set; }
+
+    public DateTime CreatedAt { get; set; }
 }

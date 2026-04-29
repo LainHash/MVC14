@@ -1,4 +1,18 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdown = document.querySelector('.category-dropdown');
+    const toggle = document.querySelector('.category-dropdown-toggle');
+    const menu = document.querySelector('.category-dropdown .dropdown-menu');
 
-// Write your JavaScript code.
+    if (dropdown && toggle && menu) {
+        dropdown.addEventListener('mouseenter', function () {
+            this.classList.add('show');
+            menu.style.display = 'block';
+        });
+
+        dropdown.addEventListener('mouseleave', function () {
+            this.classList.remove('show');
+            menu.style.display = 'none';
+        });
+    }
+});
